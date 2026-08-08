@@ -107,21 +107,12 @@ export default function App() {
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <a
-              href="https://docs.google.com/spreadsheets/d/1158tCaUavnogPla9ZrmzDtIkt3K3nZqwAw0NeRKIql0/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Google Sheet
-            </a>
-            <span>•</span>
-            <a
               href="https://www.runlah.com/th/kkrtmm2026/participants"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyan-400 transition-colors"
+              className="hover:text-cyan-400 transition-colors font-medium"
             >
-              Runlah Official
+              Runlah Official List
             </a>
           </div>
         </div>

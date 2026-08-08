@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Search, Award, ShieldCheck, Volume2, VolumeX, ExternalLink, FileSpreadsheet, RefreshCw } from 'lucide-react';
+import { Sparkles, Search, Award, ShieldCheck, Volume2, VolumeX, ExternalLink, RefreshCw } from 'lucide-react';
 import { sound } from '../utils/audio';
 
 export default function Navbar({ activeTab, setActiveTab, totalRunners, winnerCount, isMuted, setIsMuted, onOpenSyncModal }) {
@@ -38,18 +38,6 @@ export default function Navbar({ activeTab, setActiveTab, totalRunners, winnerCo
 
           {/* Quick Action Links & Audio */}
           <div className="hidden lg:flex items-center space-x-3">
-            <a
-              href="https://docs.google.com/spreadsheets/d/1158tCaUavnogPla9ZrmzDtIkt3K3nZqwAw0NeRKIql0/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-all hover:border-slate-500"
-              title="เปิด Google Sheet สรุปรายชื่อ"
-            >
-              <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
-              Google Sheet
-              <ExternalLink className="w-3 h-3 ml-1 text-slate-500" />
-            </a>
-
             <a
               href="https://www.runlah.com/th/kkrtmm2026/participants"
               target="_blank"
@@ -107,7 +95,7 @@ export default function Navbar({ activeTab, setActiveTab, totalRunners, winnerCo
             }`}
           >
             <Search className="w-4 h-4 mr-2" />
-            🔍 ตรวจสอบรายชื่อนักวิ่ง ({totalRunners})
+            🔍 ตรวจสอบรายชื่อนักวิ่ง ({totalRunners.toLocaleString()})
           </button>
 
           <button

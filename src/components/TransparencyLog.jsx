@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, Lock, ExternalLink, FileText, Database, Server } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Lock, ExternalLink, Database } from 'lucide-react';
 
 export default function TransparencyLog({ totalRunners, winnerCount }) {
   return (
@@ -20,57 +20,28 @@ export default function TransparencyLog({ totalRunners, winnerCount }) {
         </div>
       </div>
 
-      {/* Transparency Check Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        {/* Source 1: Google Sheet */}
-        <div className="glass-card p-6 rounded-3xl border border-slate-800 space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 text-emerald-400 font-bold text-sm">
-              <FileText className="w-5 h-5" />
-              <span>แหล่งข้อมูล 1: Google Sheet</span>
-            </div>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              Verified
-            </span>
+      {/* Official Data Source */}
+      <div className="glass-card p-6 rounded-3xl border border-slate-800 space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2 text-cyan-400 font-bold text-sm">
+            <Database className="w-5 h-5" />
+            <span>ฐานข้อมูลทางการ: Runlah Participants Official</span>
           </div>
-          <p className="text-xs text-slate-300 leading-relaxed">
-            ตารางสรุปยอดผู้เข้าร่วมกิจกรรมจำแนกตามระยะทาง เพศ และกลุ่มอายุ จากเอกสารหลักอย่างเป็นทางการ
-          </p>
-          <a
-            href="https://docs.google.com/spreadsheets/d/1158tCaUavnogPla9ZrmzDtIkt3K3nZqwAw0NeRKIql0/edit?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-xs text-emerald-400 hover:underline font-semibold"
-          >
-            เปิดดูเอกสาร Google Sheet ฉบับเต็ม <ExternalLink className="w-3.5 h-3.5 ml-1" />
-          </a>
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            Synced Official
+          </span>
         </div>
-
-        {/* Source 2: Runlah Official List */}
-        <div className="glass-card p-6 rounded-3xl border border-slate-800 space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 text-cyan-400 font-bold text-sm">
-              <Database className="w-5 h-5" />
-              <span>แหล่งข้อมูล 2: Runlah Participants</span>
-            </div>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-              Synced
-            </span>
-          </div>
-          <p className="text-xs text-slate-300 leading-relaxed">
-            รายชื่อผู้ร่วมกิจกรรม 1,311 รายการ บันทึกเลข BIB, ชื่อภาษาไทย, ชื่อภาษาอังกฤษ และประเภทการแข่งขัน
-          </p>
-          <a
-            href="https://www.runlah.com/th/kkrtmm2026/participants"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-xs text-cyan-400 hover:underline font-semibold"
-          >
-            เปิดดูหน้า Runlah Participants Official <ExternalLink className="w-3.5 h-3.5 ml-1" />
-          </a>
-        </div>
-
+        <p className="text-xs text-slate-300 leading-relaxed">
+          รายชื่อผู้ร่วมกิจกรรมทั้งหมด {totalRunners.toLocaleString()} รายการ บันทึกเลข BIB, ชื่อ-นามสกุล, เพศ และประเภทการแข่งขัน ตรวจสอบตรงกับระบบลงทะเบียน Runlah
+        </p>
+        <a
+          href="https://www.runlah.com/th/kkrtmm2026/participants"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-xs text-cyan-400 hover:underline font-semibold"
+        >
+          เปิดดูหน้า Runlah Participants Official <ExternalLink className="w-3.5 h-3.5 ml-1" />
+        </a>
       </div>
 
       {/* Technical Random Algorithm Standard */}
